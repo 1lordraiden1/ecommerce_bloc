@@ -13,6 +13,13 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   final HomeBloc homeBloc = HomeBloc();
+
+  @override
+  void initState() {
+    homeBloc.add(HomeInitEvent());
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<HomeBloc, HomeState>(
@@ -27,8 +34,7 @@ class _HomeState extends State<Home> {
               builder: (context) => Cart(),
             ),
           );
-        }
-        else if (state is HomeNavigateToWishlistPageActionState) {
+        } else if (state is HomeNavigateToWishlistPageActionState) {
           Navigator.push(
             context,
             MaterialPageRoute(
@@ -38,26 +44,60 @@ class _HomeState extends State<Home> {
         }
       },
       builder: (context, state) {
-        return Scaffold(
-          appBar: AppBar(
-            title: const Text("Grocery App"),
-            actions: [
-              IconButton(
-                onPressed: () {
-                  homeBloc.add(HomeCartButtonNavigateEvent());
-                },
-                icon: Icon(Icons.favorite_border_outlined),
+        switch (state.runtimeType) {
+          case HomeLoadingState: //Loading Screen
+            return const Scaffold(
+              body: Center(child: CircularProgressIndicator()),
+            );
+          case HomeLoadedSuccessState: //Loaded Successfully
+            return Scaffold(
+              appBar: AppBar(
+                title: const Text("Grocery App"),
+                actions: [
+                  IconButton(
+                    onPressed: () {
+                      homeBloc.add(HomeCartButtonNavigateEvent());
+                    },
+                    icon: const Icon(Icons.favorite_border_outlined),
+                  ),
+                  IconButton(
+                    onPressed: () {
+                      homeBloc.add(HomeWishlistButtonNavigateEvent());
+                    },
+                    icon: const Icon(Icons.shopping_cart),
+                  ),
+                ],
               ),
-              IconButton(
-                onPressed: () {
-                  homeBloc.add(HomeWishlistButtonNavigateEvent());
-                },
-                icon: Icon(Icons.shopping_cart),
-              ),
-            ],
-          ),
-        );
+            );
+          case HomeErrorState:
+            return const Scaffold(
+              body: Center(child: Text("Error in Loading Products")),
+            );
+          default:
+            return SizedBox();
+        }
       },
     );
   }
 }
+
+
+// return Scaffold(
+//           appBar: AppBar(
+//             title: const Text("Grocery App"),
+//             actions: [
+//               IconButton(
+//                 onPressed: () {
+//                   homeBloc.add(HomeCartButtonNavigateEvent());
+//                 },
+//                 icon: Icon(Icons.favorite_border_outlined),
+//               ),
+//               IconButton(
+//                 onPressed: () {
+//                   homeBloc.add(HomeWishlistButtonNavigateEvent());
+//                 },
+//                 icon: Icon(Icons.shopping_cart),
+//               ),
+//             ],
+//           ),
+//         );

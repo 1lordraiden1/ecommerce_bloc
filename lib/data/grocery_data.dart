@@ -1,4 +1,5 @@
-List<Map<String, dynamic>> groceryProducts = [
+class GroceryData{
+  static List<Map<String, dynamic>> groceryProducts = [
   {
     "id": 1,
     "name": "Apples",
@@ -32,6 +33,7 @@ List<Map<String, dynamic>> groceryProducts = [
         "https://img.taste.com.au/F0W1xU4i/taste/2018/02/cls0318eggss_eggs-135792-1.jpg",
   },
 ];
+}
 
 /*
 {
