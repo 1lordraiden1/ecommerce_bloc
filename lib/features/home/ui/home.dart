@@ -73,6 +73,7 @@ class _HomeState extends State<Home> {
               body: ListView.builder(
                   itemCount: successState.products.length,
                   itemBuilder: (context, index) => ProductTileWidget(
+                      homeBloc: homeBloc,
                       productDataModel: successState.products[index])),
             );
           case HomeErrorState:
