@@ -1,38 +1,38 @@
-class GroceryData{
+class GroceryData {
   static List<Map<String, dynamic>> groceryProducts = [
-  {
-    "id": 1,
-    "name": "Apples",
-    "price": 1.99,
-    "description": "Fresh and crisp apples.",
-    "imageURL":
-        "https://hips.hearstapps.com/hmg-prod/images/red-fresh-apple-isolated-on-white-background-royalty-free-image-1627314996.jpg?crop=1.00xw:0.923xh;0,0.0486xh&resize=980:*",
-  },
-  {
-    "id": 2,
-    "name": "Milk",
-    "price": 2.49,
-    "description": "1 gallon of whole milk.",
-    "imageURL":
-        "https://cdn.store-factory.com/www.culinaide.com/content/product_4801045b.jpg?v=1597660182",
-  },
-  {
-    "id": 3,
-    "name": "Bread",
-    "price": 2.29,
-    "description": "Artisanal wheat bread loaf.",
-    "imageURL":
-        "https://assets.bonappetit.com/photos/5c62e4a3e81bbf522a9579ce/16:9/w_4000,h_2250,c_limit/milk-bread.jpg",
-  },
-  {
-    "id": 4,
-    "name": "Eggs",
-    "price": 1.99,
-    "description": "One dozen large eggs.",
-    "imageURL":
-        "https://img.taste.com.au/F0W1xU4i/taste/2018/02/cls0318eggss_eggs-135792-1.jpg",
-  },
-];
+    {
+      "id": "1",
+      "name": "Apples",
+      "price": 1.99,
+      "description": "Fresh and crisp apples.",
+      "imageURL":
+          "https://hips.hearstapps.com/hmg-prod/images/red-fresh-apple-isolated-on-white-background-royalty-free-image-1627314996.jpg?crop=1.00xw:0.923xh;0,0.0486xh&resize=980:*",
+    },
+    {
+      "id": "2",
+      "name": "Milk",
+      "price": 2.49,
+      "description": "1 gallon of whole milk.",
+      "imageURL":
+          "https://cdn.store-factory.com/www.culinaide.com/content/product_4801045b.jpg?v=1597660182",
+    },
+    {
+      "id": "3",
+      "name": "Bread",
+      "price": 2.29,
+      "description": "Artisanal wheat bread loaf.",
+      "imageURL":
+          "https://assets.bonappetit.com/photos/5c62e4a3e81bbf522a9579ce/16:9/w_4000,h_2250,c_limit/milk-bread.jpg",
+    },
+    {
+      "id": "4",
+      "name": "Eggs",
+      "price": 1.99,
+      "description": "One dozen large eggs.",
+      "imageURL":
+          "https://img.taste.com.au/F0W1xU4i/taste/2018/02/cls0318eggss_eggs-135792-1.jpg",
+    },
+  ];
 }
 
 /*
