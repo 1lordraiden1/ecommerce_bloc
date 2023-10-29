@@ -6,7 +6,7 @@ class GroceryData {
       "price": 1.99,
       "description": "Fresh and crisp apples.",
       "imageURL":
-          "https://hips.hearstapps.com/hmg-prod/images/red-fresh-apple-isolated-on-white-background-royalty-free-image-1627314996.jpg?crop=1.00xw:0.923xh;0,0.0486xh&resize=980:*",
+          "https://images.everydayhealth.com/images/apples-101-about-1440x810.jpg",
     },
     {
       "id": "2",
@@ -22,7 +22,7 @@ class GroceryData {
       "price": 2.29,
       "description": "Artisanal wheat bread loaf.",
       "imageURL":
-          "https://assets.bonappetit.com/photos/5c62e4a3e81bbf522a9579ce/16:9/w_4000,h_2250,c_limit/milk-bread.jpg",
+          "https://t1.gstatic.com/licensed-image?q=tbn:ANd9GcQwu9l5QEVRGPd9-hQ90jhpiGAMg1ycT46XWkXivXoCYaZ2RUm0Fz_Y0ZVxsJ50o3_K",
     },
     {
       "id": "4",
@@ -30,7 +30,7 @@ class GroceryData {
       "price": 1.99,
       "description": "One dozen large eggs.",
       "imageURL":
-          "https://img.taste.com.au/F0W1xU4i/taste/2018/02/cls0318eggss_eggs-135792-1.jpg",
+          "https://www.wildfoods.co/cdn/shop/articles/the-average-american-consumed-over-400-eggs-in-1945-1662994865.jpg?v=1678036474",
     },
   ];
 }
