@@ -31,7 +31,10 @@ List<Map<String, dynamic>> groceryProducts = [
     "imageURL":
         "https://img.taste.com.au/F0W1xU4i/taste/2018/02/cls0318eggss_eggs-135792-1.jpg",
   },
-  {
+];
+
+/*
+{
     "id": 5,
     "name": "Chicken Breast",
     "price": 5.99,
@@ -69,4 +72,4 @@ List<Map<String, dynamic>> groceryProducts = [
     "imageURL":
         "https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2F2023-04-baked-salmon-how-to%2Fbaked-salmon-step6-4792",
   },
-];
+*/
