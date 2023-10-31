@@ -22,7 +22,7 @@ class _WishlistState extends State<Wishlist> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(
+        title: const Center(
             child: Text(
           "WishList",
           textAlign: TextAlign.center,
@@ -35,7 +35,7 @@ class _WishlistState extends State<Wishlist> {
         listener: (context, state) {
           if (state is WishlistRemovedActionState) {
             ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
+              const SnackBar(
                 content: Text("Item Removed"),
               ),
             );

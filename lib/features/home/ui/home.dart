@@ -32,25 +32,25 @@ class _HomeState extends State<Home> {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => Wishlist(),
+              builder: (context) => const Wishlist(),
             ),
           );
         } else if (state is HomeNavigateToWishlistPageActionState) {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => Cart(),
+              builder: (context) => const Cart(),
             ),
           );
         } else if (state is HomeProductItemCartedActionState) {
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
+            const SnackBar(
               content: Text("Item Carted"),
             ),
           );
         } else if (state is HomeProductItemWishlistedActionState) {
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
+            const SnackBar(
               content: Text("Item Wishlisted"),
             ),
           );
@@ -93,7 +93,7 @@ class _HomeState extends State<Home> {
               body: Center(child: Text("Error in Loading Products")),
             );
           default:
-            return SizedBox();
+            return const SizedBox();
         }
       },
     );

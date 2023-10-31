@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:grocery/features/cart/bloc/cart_bloc.dart';
-import 'package:grocery/features/home/bloc/home_bloc.dart';
 import 'package:grocery/models/home_product_data_model.dart';
 
 class CartTileWidget extends StatelessWidget {
   final ProductDataModel productDataModel;
   final CartBloc cartBloc;
-  CartTileWidget(
+  const CartTileWidget(
       {super.key, required this.productDataModel, required this.cartBloc});
 
   @override
@@ -33,13 +32,13 @@ class CartTileWidget extends StatelessWidget {
           ),
           Text(
             productDataModel.name,
-            style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
           ),
           Text(
             productDataModel.des,
             overflow: TextOverflow.ellipsis,
           ),
-          SizedBox(
+          const SizedBox(
             height: 10.0,
           ),
           Row(
@@ -47,7 +46,7 @@ class CartTileWidget extends StatelessWidget {
             children: [
               Text(
                 '\$${productDataModel.price}',
-                style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
               ),
               Row(
                 children: [
@@ -55,7 +54,7 @@ class CartTileWidget extends StatelessWidget {
                     onPressed: () {
                       cartBloc.add(CartRemoveFromCartEvent(productDataModel));
                     },
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.shopping_bag,
                     ),
                   ),

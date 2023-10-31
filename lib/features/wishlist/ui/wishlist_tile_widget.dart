@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:grocery/features/cart/bloc/cart_bloc.dart';
-import 'package:grocery/features/home/bloc/home_bloc.dart';
 import 'package:grocery/features/wishlist/bloc/wishlist_bloc.dart';
 import 'package:grocery/models/home_product_data_model.dart';
 
 class WishlistTileWidget extends StatelessWidget {
   final ProductDataModel productDataModel;
   final WishlistBloc wishlistBloc;
-  WishlistTileWidget(
+  const WishlistTileWidget(
       {super.key, required this.productDataModel, required this.wishlistBloc});
 
   @override
@@ -34,13 +32,13 @@ class WishlistTileWidget extends StatelessWidget {
           ),
           Text(
             productDataModel.name,
-            style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
           ),
           Text(
             productDataModel.des,
             overflow: TextOverflow.ellipsis,
           ),
-          SizedBox(
+          const SizedBox(
             height: 10.0,
           ),
           Row(
@@ -48,7 +46,7 @@ class WishlistTileWidget extends StatelessWidget {
             children: [
               Text(
                 '\$${productDataModel.price}',
-                style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
               ),
               Row(
                 children: [
@@ -56,7 +54,7 @@ class WishlistTileWidget extends StatelessWidget {
                     onPressed: () {
                       wishlistBloc.add(WishlistRemoveFromWishlist(productDataModel));
                     },
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.favorite,
                     ),
                   ),

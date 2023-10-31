@@ -5,7 +5,7 @@ import 'package:grocery/models/home_product_data_model.dart';
 class ProductTileWidget extends StatelessWidget {
   final ProductDataModel productDataModel;
   final HomeBloc homeBloc;
-  ProductTileWidget(
+  const ProductTileWidget(
       {super.key, required this.productDataModel, required this.homeBloc});
 
   @override
@@ -32,13 +32,13 @@ class ProductTileWidget extends StatelessWidget {
           ),
           Text(
             productDataModel.name,
-            style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
           ),
           Text(
             productDataModel.des,
             overflow: TextOverflow.ellipsis,
           ),
-          SizedBox(
+          const SizedBox(
             height: 10.0,
           ),
           Row(
@@ -46,7 +46,7 @@ class ProductTileWidget extends StatelessWidget {
             children: [
               Text(
                 '\$${productDataModel.price}',
-                style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
               ),
               Row(
                 children: [
@@ -54,7 +54,7 @@ class ProductTileWidget extends StatelessWidget {
                     onPressed: () {
                       homeBloc.add(HomeProductWishlistButtonClickedEvent(productDataModel));
                     },
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.favorite_border_outlined,
                     ),
                   ),
@@ -62,7 +62,7 @@ class ProductTileWidget extends StatelessWidget {
                     onPressed: () {
                       homeBloc.add(HomeProductCartButtonClickedEvent(productDataModel));
                     },
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.shopping_bag_outlined,
                     ),
                   ),
