@@ -12,3 +12,8 @@ class CartSuccessState extends CartState {
 
   CartSuccessState(this.cartItems);
 }
+
+class CartRemovedActionState extends CartActionState{}
+
+
+
