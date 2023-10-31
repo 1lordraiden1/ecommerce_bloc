@@ -29,6 +29,7 @@ class _CartState extends State<Cart> {
         ),
       ),
       body: BlocConsumer<CartBloc, CartState>(
+        bloc: cartBloc,
         listener: (context, state) {},
         listenWhen: (previous, current) => current is CartActionState,
         buildWhen: (previous, current) => current is! CartActionState,

@@ -32,14 +32,14 @@ class _HomeState extends State<Home> {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => Cart(),
+              builder: (context) => Wishlist(),
             ),
           );
         } else if (state is HomeNavigateToWishlistPageActionState) {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => Wishlist(),
+              builder: (context) => Cart(),
             ),
           );
         } else if (state is HomeProductItemCartedActionState) {
