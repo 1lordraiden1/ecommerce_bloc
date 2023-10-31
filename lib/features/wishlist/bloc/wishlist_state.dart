@@ -14,5 +14,8 @@ class WishlistSuccessState extends WishlistState{
 
 }
 
+class WishlistRemovedActionState extends WishlistActionState {}
+
+
 
 
