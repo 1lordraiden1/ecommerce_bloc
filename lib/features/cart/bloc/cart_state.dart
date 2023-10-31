@@ -8,7 +8,7 @@ sealed class CartActionState extends CartState {}
 class CartInitial extends CartState {}
 
 class CartSuccessState extends CartState {
-  final List<ProductDataModel> cart;
+  final List<ProductDataModel> cartItems;
 
-  CartSuccessState(this.cart);
+  CartSuccessState(this.cartItems);
 }
