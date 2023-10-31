@@ -52,10 +52,10 @@ class _CartState extends State<Cart> {
                 ),
               ),
               bottomSheet: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 10),
                 alignment: Alignment.center,
                 width: double.infinity,
-                height: 100,
+                height: 50,
                 decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
