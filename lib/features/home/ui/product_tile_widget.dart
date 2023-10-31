@@ -52,7 +52,7 @@ class ProductTileWidget extends StatelessWidget {
                 children: [
                   IconButton(
                     onPressed: () {
-                      homeBloc.add(HomeProductWishlistButtonClickedEvent());
+                      homeBloc.add(HomeProductWishlistButtonClickedEvent(productDataModel));
                     },
                     icon: Icon(
                       Icons.favorite_border_outlined,
@@ -60,7 +60,7 @@ class ProductTileWidget extends StatelessWidget {
                   ),
                   IconButton(
                     onPressed: () {
-                      homeBloc.add(HomeProductCartButtonClickedEvent());
+                      homeBloc.add(HomeProductCartButtonClickedEvent(productDataModel));
                     },
                     icon: Icon(
                       Icons.shopping_bag_outlined,
