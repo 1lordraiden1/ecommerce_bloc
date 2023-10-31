@@ -32,7 +32,7 @@ class _CartState extends State<Cart> {
         buildWhen: (previous, current) => current is! CartActionState,
         builder: (context, state) {
           switch (state.runtimeType) {
-            case :
+            case fgh:
               
               break;
             default:
