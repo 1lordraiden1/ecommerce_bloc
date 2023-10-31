@@ -40,7 +40,7 @@ class _CartState extends State<Cart> {
             final successState = state as CartSuccessState;
             return Scaffold(
               appBar: AppBar(
-                title: Center(
+                title: const Center(
                   child: Text("Cart"),
                 ),
               ),
