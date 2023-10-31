@@ -4,6 +4,7 @@ class ProductDataModel {
   final String des;
   final double price;
   final String imageUrl;
+  
 
   ProductDataModel(
     this.id,

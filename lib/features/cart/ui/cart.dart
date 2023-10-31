@@ -30,12 +30,12 @@ class _CartState extends State<Cart> {
       body: BlocConsumer<CartBloc, CartState>(
         bloc: cartBloc,
         listener: (context, state) {
-          if (state is CartRemovedActionState){
+          if (state is CartRemovedActionState) {
             ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              content: Text("Item Removed"),
-            ),
-          );
+              const SnackBar(
+                content: Text("Item Removed"),
+              ),
+            );
           }
         },
         listenWhen: (previous, current) => current is CartActionState,
@@ -60,3 +60,31 @@ class _CartState extends State<Cart> {
     );
   }
 }
+
+// Container(
+//             padding: const EdgeInsets.symmetric(horizontal: 20),
+//             alignment: Alignment.center,
+//             width: double.infinity,
+//             height: 100,
+//             decoration: const BoxDecoration(
+//               color: Colors.white,
+//               borderRadius: BorderRadius.only(
+//                   topLeft: Radius.circular(10), topRight: Radius.circular(10)),
+//             ),
+//             child: Row(
+//               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//               children: [
+//                 Text(
+//                   "bloc price",
+//                   style: const TextStyle(
+//                       fontSize: 35, fontWeight: FontWeight.bold),
+//                 ),
+//                 ElevatedButton.icon(
+//                   onPressed: () {},
+//                   style: const ButtonStyle(),
+//                   label: const Text("Check Out"),
+//                   icon: const Icon(Icons.shopping_cart_checkout),
+//                 ),
+//               ],
+//             ),
+//           );
