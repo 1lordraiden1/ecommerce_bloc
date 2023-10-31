@@ -13,10 +13,10 @@ class CartBloc extends Bloc<CartEvent, CartState> {
     on<CartInitialEvent>(cartInitialEvent);
     on<CartRemoveFromCartEvent>(cartRemoveFromCartEvent);
   }
+  double totalPrice = 0.0;
 
   FutureOr<void> cartInitialEvent(
       CartInitialEvent event, Emitter<CartState> emit) {
-    double totalPrice = 0.0;
     for (var element in cartItems) {
       totalPrice += element.price;
     }
@@ -26,10 +26,8 @@ class CartBloc extends Bloc<CartEvent, CartState> {
   FutureOr<void> cartRemoveFromCartEvent(
       CartRemoveFromCartEvent event, Emitter<CartState> emit) {
     cartItems.remove(event.productDataModel);
-    double totalPrice = 0.0;
-    for (var element in cartItems) {
-      totalPrice += element.price;
-    }
+
+    totalPrice -= event.productDataModel.price;
     emit(CartRemovedActionState());
     emit(CartSuccessState(cartItems, totalPrice));
   }

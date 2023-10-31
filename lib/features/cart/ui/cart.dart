@@ -21,46 +21,73 @@ class _CartState extends State<Cart> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Center(
-          child: Text("Cart"),
-        ),
-      ),
-      body: BlocConsumer<CartBloc, CartState>(
-        bloc: cartBloc,
-        listener: (context, state) {
-          if (state is CartRemovedActionState) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(
-                content: Text("Item Removed"),
+    return BlocConsumer<CartBloc, CartState>(
+      bloc: cartBloc,
+      listener: (context, state) {
+        if (state is CartRemovedActionState) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text("Item Removed"),
+            ),
+          );
+        }
+      },
+      listenWhen: (previous, current) => current is CartActionState,
+      buildWhen: (previous, current) => current is! CartActionState,
+      builder: (context, state) {
+        switch (state.runtimeType) {
+          case CartSuccessState:
+            final successState = state as CartSuccessState;
+            return Scaffold(
+              appBar: AppBar(
+                title: Center(
+                  child: Text("Cart"),
+                ),
               ),
-            );
-          }
-        },
-        listenWhen: (previous, current) => current is CartActionState,
-        buildWhen: (previous, current) => current is! CartActionState,
-        builder: (context, state) {
-          switch (state.runtimeType) {
-            case CartSuccessState:
-              final successState = state as CartSuccessState;
-              return ListView.builder(
+              body: ListView.builder(
                 itemCount: successState.cartItems.length,
                 itemBuilder: (context, index) => CartTileWidget(
                   cartBloc: cartBloc,
                   productDataModel: successState.cartItems[index],
                 ),
-              );
+              ),
+              bottomSheet: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                alignment: Alignment.center,
+                width: double.infinity,
+                height: 100,
+                decoration: const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(10),
+                      topRight: Radius.circular(10)),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "\$${cartBloc.totalPrice.toStringAsPrecision(3).toString()}",
+                      style: const TextStyle(
+                          fontSize: 35, fontWeight: FontWeight.bold),
+                    ),
+                    ElevatedButton.icon(
+                      onPressed: () {},
+                      style: const ButtonStyle(),
+                      label: const Text("Check Out"),
+                      icon: const Icon(Icons.shopping_cart_checkout),
+                    ),
+                  ],
+                ),
+              ),
+            );
 
-            default:
-          }
-          return Container();
-        },
-      ),
+          default:
+        }
+        return Container();
+      },
     );
   }
 }
-
 // Container(
 //             padding: const EdgeInsets.symmetric(horizontal: 20),
 //             alignment: Alignment.center,
